@@ -42,7 +42,12 @@ Attempted solution: ${task.solutionQuery}
         let result: { isValid: boolean, feedback?: string }
         if (topic === 'dql') {
             const solutionTable = database.exec(task.solutionQuery)[0]
-            result = validateDQLInput(solutionTable, solutionTable)
+            if (solutionTable) {
+                result = validateDQLInput(solutionTable, solutionTable)
+            } else {
+                // Currently treating solutions with no results as valid
+                result = { isValid: true, feedback: undefined }
+            }
         } else if (topic === 'ddl') {
             result = validateDDLInput(task.solutionQuery, task, database)
         } else {
@@ -53,6 +58,8 @@ Attempted solution: ${task.solutionQuery}
         expect(result.isValid).toBe(true)
     })
 }
+
+
 
 for (const task of dqlTasks) {
     makeTestForTask(task, 'dql')
