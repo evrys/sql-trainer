@@ -3,7 +3,8 @@ const tables: {[key: string]: string[]} = {
   fahrrad: ['ABTEILUNGEN', 'ANGESTELLTE', 'ARTIKEL', 'AUFTRAEGE', 'AUFTRAGSPOSITIONEN', 'GEH_KLASSEN', 'KUNDEN', 'LAGER', 'LAGERBESTAND', 'LIEFERANTEN', 'LIEFERPROGRAMME', 'LIEFERUNGEN', 'ORTE', 'STRUKTUR', 'TEILE', 'TEILE_WERKE', 'WERKE'],
   theater: ['DICHTER', 'DRAMA', 'ENGAMENT', 'ROLLE', 'SCHAUSPIELER', 'SPIELZEIT', 'STELLT_DAR', 'THEATER'],
   reisen: ['BUCHUNG', 'HOTEL', 'KUNDE', 'REISEZEIT', 'STADT'],
-  fussball: ['BESTELLUNGEN', 'KARTEN', 'NATION', 'PERSONEN', 'PREISKATEGORIE', 'SPIELE', 'SPIELER', 'TORE']
+  fussball: ['BESTELLUNGEN', 'KARTEN', 'NATION', 'PERSONEN', 'PREISKATEGORIE', 'SPIELE', 'SPIELER', 'TORE'],
+  eichhörnchen: ['hörnchen', 'nusslagerung']
 }
 
 export default tables

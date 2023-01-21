@@ -1586,4 +1586,20 @@ UPDATE nation SET trainername = 'Kniggel' WHERE nationname = (
       'UPDATE country SET area = 600400 WHERE country in (SELECT country FROM population WHERE population_growth = (SELECT ROUND(AVG(population_growth),2) FROM population))',
     taskType: 3,
   },
+  {
+    id: 599902,
+    schema: 'eichhörnchen',
+    difficulty: 'mittel',
+    text: `Das Eichhörnchen Nibbles plant ein Festmahl für seine Freunde!
+
+    Fügen Sie ein Nusslager im Besitz von Nibbles mit dem Standort "Versammlungsbaum" hinzu, das 10 Nüsse für jedes Eichhörnchen in der Datenbank enthält.`,
+    solutionQuery: `INSERT INTO nusslagerung 
+  (hörnchen_id, standort, nussanzahl) 
+  VALUES (
+    (SELECT id FROM hörnchen WHERE name = 'Nibbles'), 
+    'Versammlungsbaum', 
+    (SELECT COUNT(*) FROM hörnchen) * 10
+  );`,
+    taskType: 1,
+  }
 ]

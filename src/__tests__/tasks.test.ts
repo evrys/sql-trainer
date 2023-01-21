@@ -59,8 +59,6 @@ Attempted solution: ${task.solutionQuery}
     })
 }
 
-
-
 for (const task of dqlTasks) {
     makeTestForTask(task, 'dql')
 }

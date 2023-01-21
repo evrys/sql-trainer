@@ -3,7 +3,7 @@ import { dmlTasks } from '../Tasks/DMLTasks'
 import { dqlTasks } from '../Tasks/DQLTasks'
 import { Task } from '../Types/Task'
 
-export const SCHEMA_OPTIONS = ['Busse', 'Fahrrad', 'Theater', 'Reisen', 'Fussball']
+export const SCHEMA_OPTIONS = ['Busse', 'Fahrrad', 'Theater', 'Reisen', 'Fussball', 'Eichhörnchen']
 
 export function useSchemaOptions(topic: string) {
   let tasks: Task[]

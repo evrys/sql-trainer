@@ -1856,5 +1856,15 @@ export const dqlTasks: Task[] = [
     text: 'Wie heißt der Trainer (Ausgabe: Trainername) der australischen Mannschaft?',
     solutionQuery: "SELECT nation.TRAINERNAME FROM Nation WHERE nation.NATIONNAME = 'Australien'",
     taskType: 1
+  },
+  {
+    id: 599903,
+    schema: 'eichhörnchen',
+    difficulty: 'mittel',
+    text: `Die Eichhörnchen veranstalten einen Wettbewerb im Nusssammeln.
+
+Finde heraus, wer die meisten Nüsse hat und gib den Namen des Eichhörnchens und die Anzahl der gesammelten Nüsse zurück!`,
+    solutionQuery: `SELECT name, sum(nussanzahl) FROM hörnchen INNER JOIN nusslagerung ON nusslagerung.hörnchen_id=hörnchen.id GROUP BY name ORDER BY sum(nussanzahl) DESC LIMIT 1`,
+    taskType: 1
   }
 ]

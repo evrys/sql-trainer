@@ -318,4 +318,19 @@ export const ddlTasks: Task[] = [
       'CREATE TABLE EINSATZPLAN2 (\n      "EINPLAN_ID" NUMBER(9,0) PRIMARY KEY,\n      "TAG" DATE,\n     "FAHRT_ID" NUMBER(9,0) CONSTRAINT "POS_ID41" CHECK ("FAHRT_ID">= 0),\n     "FAHRZEUG_ID" NUMBER(9,0) NOT NULL,\n     "MITA_ID" NUMBER(9,0)\n     ) ;',
     taskType: 1,
   },
+  {
+    id: 599901,
+    schema: 'eichhörnchen',
+    difficulty: 'mittel',
+    text: `Das Projekt Eichhörnchenzählung will die Flauschigkeit von Eichhörnchenschwänzen zu verschiedenen Zeiten messen.
+    
+Erzeugen Sie eine neue Tabelle mit dem Namen "flauschigkeitsmessung", und die Spaltes "hörnchen_id" (Fremdschlüssel!), "date", und "flauschigkeit" (die ganzzahlige Flusenlänge in Millimetern).`,
+    solutionQuery: `CREATE TABLE flauschigkeitsmessung (
+  hörnchen_id INTEGER NOT NULL,
+  date DATE NOT NULL,
+  flauschigkeit INTEGER NOT NULL,
+  FOREIGN KEY(hörnchen_id) REFERENCES hörnchen(id)
+)`,
+    taskType: 1,
+  }
 ]
